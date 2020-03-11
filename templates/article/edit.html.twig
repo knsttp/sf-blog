@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<h1 class="pb-2 my-4 border-bottom">Create or Update Article:</h1>
+
+{{ form_start(form) }}
+<div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-10">
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Author</label>
+    <div class="col-sm-10">
+        {{ form_widget(form.author, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Article Body</label>
+    <div class="col-sm-10">
+        {{ form_widget(form.body, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group row">
+    <label for="" class="col-sm-2 col-form-label">Homepage</label>
+    <div class="col-sm-10">
+        {{ form_widget(form.url, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-sm-10 offset-sm-2">
+        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+    </div>
+</div>
+{{ form_end(form) }}
+
+{% endblock %}
