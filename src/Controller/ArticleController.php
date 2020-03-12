@@ -8,8 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
 class ArticleController extends AbstractController {
-
+    
     public function create(Request $request) {
+        
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
